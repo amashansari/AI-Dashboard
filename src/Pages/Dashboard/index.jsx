@@ -9,7 +9,7 @@ const CustomDashboard = () => {
         <div className="sidebar">
           <CustomSidebar />
         </div>
-        <div className="main-area-container">
+        <div className="main-area-container rounded-3">
           <Outlet />
         </div>
       </div>

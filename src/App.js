@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CustomDashboard from "./Pages/Dashboard";
-import CustomCode from "./Components/Code";
+import CustomPageLayout from "./Pages/PageLayout";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CustomDashboard />}>
-            <Route path="code" element={<CustomCode />}></Route>
+            <Route path="/" element={<CustomPageLayout />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
