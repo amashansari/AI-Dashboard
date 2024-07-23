@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const CustomDashboard = () => {
   return (
     <>
-      <div className="main-dashboard-container p-3">
+      <div className="main-dashboard-container">
         <div className="sidebar">
           <CustomSidebar />
         </div>
