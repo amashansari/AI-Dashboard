@@ -118,8 +118,8 @@ function ProductsPage() {
       ) : (
         <foreignObject width="300" height="200" x="-150" y="-100">
           <div className="accordion-container">
-            <Accordion className="ai-accordion" defaultActiveKey={nodeDatum.id}>
-              <Accordion.Item eventKey={nodeDatum.id}>
+            <Accordion className="ai-accordion" >
+              <Accordion.Item >
                 <Accordion.Header>{nodeDatum.name}</Accordion.Header>
                 <Accordion.Body>
                   <div className="accordion-body-content">
@@ -194,6 +194,7 @@ function ProductsPage() {
           stroke: "#90caf9",
           strokeWidth: 2,
         }}
+        renderCustomNodeElement={renderForeignObjectNode}
       />
     </Box>
   );

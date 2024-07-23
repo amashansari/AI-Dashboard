@@ -180,20 +180,31 @@
 }
 
 .layout-bottom-section {
-  height: 3000px;
   display: flex;
   gap: 16px;
 }
 
 .bottom-section-left {
   background-color: var(--bg-color-2);
+  background-image: radial-gradient(rgb(255 255 255 / 5%) 2px, transparent 0);
+  background-size: 20px 20px;
+  background-position: 0px 0px;
   height: 100%;
   width: 1050px;
 }
 
+.MuiBox-root.css-0 {
+  display: flex;
+  justify-content: center;
+}
+
+path.link {
+  fill: none;
+  stroke: var(--text-color-1) !important;
+}
+
 .bottom-section-right {
   background-color: var(--bg-color-2);
-  height: 100%;
   width: calc(1438px - 1050px);
 }
 
