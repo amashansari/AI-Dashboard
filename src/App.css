@@ -64,6 +64,16 @@ hr {
   margin-bottom: 15px;
 }
 
+.ai-chat-logo {
+  height: 35px;
+  width: 35px;
+}
+
+.ai-chat-logo img {
+  height: 100%;
+  width: 100%;
+}
+
 .active {
   background-color: var(--bg-color-3);
   padding: 5px;
@@ -121,6 +131,13 @@ hr {
   background-color: var(--bg-color-2);
 }
 
+.folder-section {
+  height: 100%;
+  position: relative;
+  z-index: 1000;
+  background: var(--bg-color-2);
+}
+
 .tree-section-top hr {
   margin: 5px !important;
 }
@@ -140,7 +157,7 @@ hr {
   border-radius: 0 10px 10px 0px;
   border: 2px solid var(--border-color-2);
   position: absolute;
-  top: 37%;
+  top: 32%;
   left: -1px;
   z-index: 500;
   border-left: none;
@@ -191,6 +208,61 @@ hr {
   /* border: 2px solid font-variant: ;(--border-color-1) !important; */
   margin-bottom: 5px;
   width: 210px;
+}
+
+.ai-chat {
+  z-index: 2000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 600px;
+  background-color: var(--bg-color-2);
+  transform: translateX(-100%);
+  transition: 2s ease;
+  border: 2px solid var(--border-color-2);
+}
+
+.showAiChat {
+  transform: translateX(0%);
+}
+
+.ai-chat-text {
+  font-size: 12px;
+}
+
+.ai-chat-mid {
+  border: 2px solid var(--border-color-2);
+  height: calc(600px - 8px - 33px - 10px - 25px - 8px - 10px);
+}
+
+.ai-chat-search {
+  padding: 2px 0px 2px 8px !important;
+  border-right: none !important;
+}
+
+.ai-chat-mid::before {
+  content: url(./Assets/PNG/Microsoft_365_Copilot_Icon.svg.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+.send-chat-btn {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color-1);
+  border-radius: 0px 5px 5px 0px;
+  border: 2px solid var(--border-color-2);
 }
 
 .right-section-head {
