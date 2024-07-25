@@ -52,9 +52,19 @@ const CustomSessions = () => {
       <div className="main-sessions-container d-flex p-2 gap-3">
         <div className="active-mute-sessions">
           <div className="active-sesssions mb-3">
-            <Accordion  defaultActiveKey="0">
+            <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
-                <Accordion.Header>Active</Accordion.Header>
+                <Accordion.Header>
+                  <div className="active-accordian-header d-flex justify-content-between align-items-center w-100">
+                    <div className="acctive-text">Active</div>
+                    <div className="search-session search-index rounded-2">
+                      <input type="text" placeholder="Search Index" />
+                      <div>
+                        <SearchIcon></SearchIcon>
+                      </div>
+                    </div>
+                  </div>
+                </Accordion.Header>
                 <Accordion.Body>
                   <div className="accordian-body-content session-body-content">
                     <div className="session-num">
@@ -76,7 +86,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar sx={{ bgcolor: pink[500] }}>A</Avatar>
+                        <Avatar className="custom-session-profile">A</Avatar>
                       </div>
                     </div>
                   </div>
@@ -101,7 +111,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar sx={{ bgcolor: green[500] }}>AK</Avatar>
+                        <Avatar className="custom-session-profile">AK</Avatar>
                       </div>
                     </div>
                   </div>
@@ -126,7 +136,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar sx={{ bgcolor: yellow[500] }}>RZ</Avatar>
+                        <Avatar className="custom-session-profile">RZ</Avatar>
                       </div>
                     </div>
                   </div>
@@ -151,7 +161,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar sx={{ bgcolor: blue[500] }}>KK</Avatar>
+                        <Avatar className="custom-session-profile">KK</Avatar>
                       </div>
                     </div>
                   </div>
@@ -176,7 +186,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar>HD</Avatar>
+                        <Avatar className="custom-session-profile">HD</Avatar>
                       </div>
                     </div>
                   </div>
@@ -185,9 +195,19 @@ const CustomSessions = () => {
             </Accordion>
           </div>
           <div className="mute-sesssions">
-            <Accordion>
+            <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
-                <Accordion.Header>Mute</Accordion.Header>
+                <Accordion.Header>
+                  <div className="mute-accordian-header d-flex justify-content-between align-items-center w-100">
+                    <div className="mute-text">Mute</div>
+                    <div className="search-session search-index rounded-2">
+                      <input type="text" placeholder="Search Index" />
+                      <div>
+                        <SearchIcon></SearchIcon>
+                      </div>
+                    </div>
+                  </div>
+                </Accordion.Header>
                 <Accordion.Body>
                   <div className="accordian-body-content session-body-content">
                     <div className="session-num mute-session">
@@ -209,7 +229,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar>H</Avatar>
+                        <Avatar className="custom-session-profile">H</Avatar>
                       </div>
                     </div>
                   </div>
@@ -233,7 +253,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+                        <Avatar className="custom-session-profile">N</Avatar>
                       </div>
                     </div>
                   </div>
@@ -257,7 +277,7 @@ const CustomSessions = () => {
                     </div>
                     <div className="profile-img">
                       <div className="session-user-profile">
-                        <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+                        <Avatar className="custom-session-profile">OP</Avatar>
                       </div>
                     </div>
                   </div>

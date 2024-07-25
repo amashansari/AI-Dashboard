@@ -3,6 +3,7 @@
   --bg-color-2: #1c1c1c;
   --bg-color-3: #34233e;
   --bg-color-4: #ffffff;
+  --bg-color-5: #878787;
 
   --bg-active: #2c532c;
   --bg-process: #7b5e29;
@@ -28,6 +29,10 @@
   --box-shadow-terminate: #808080;
 
   --hr-line-color-1: #e0e0e04a;
+}
+
+hr {
+  margin: 8px 0 !important;
 }
 
 @font-face {
@@ -72,8 +77,15 @@
   flex-direction: column;
   align-items: center;
 }
+
 .logo-profile {
   padding-bottom: 5px;
+}
+
+.custom-side-profile {
+  height: 30px !important;
+  width: 30px !important;
+  font-size: 10px !important;
 }
 
 /*                                      MAIN PAGE LAYOUT                                      */
@@ -92,8 +104,12 @@
   border-radius: 10px;
 }
 
+.main-page-layout-container {
+  position: relative;
+}
+
 .layout-top-section {
-  height: 500px;
+  height: 600px;
   width: 100%;
   gap: 16px;
   margin-bottom: 16px;
@@ -113,9 +129,72 @@
   width: calc(100% - 270px - 16px);
 }
 
+.showSession {
+  transform: translateX(100%) !important;
+}
+
+.add-session-card {
+  background-color: var(--bg-color-2);
+  height: 200px;
+  width: 270px;
+  border-radius: 0 10px 10px 0px;
+  border: 2px solid var(--border-color-2);
+  position: absolute;
+  top: 37%;
+  left: -1px;
+  z-index: 500;
+  border-left: none;
+  transform: translateX(0%);
+  transition: 2s ease;
+}
+
+.add-session-card::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: -40px;
+  left: 0;
+  height: 40px;
+  width: 18px;
+  border-top-left-radius: 50px;
+  border-top: 2px solid var(--border-color-2);
+  box-shadow: 0 -19px 0 0px var(--bg-color-2);
+}
+
+.add-session-card::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -40px;
+  left: 0;
+  height: 40px;
+  width: 18px;
+  border-bottom-left-radius: 50px;
+  border-bottom: 2px solid var(--border-color-2);
+  box-shadow: 0 19px 0 0px var(--bg-color-2);
+  z-index: -1;
+}
+
+.add-session-text {
+  font-size: 12px;
+}
+
+.add-session-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 0.8px - 16px - 18px);
+}
+
+.create-session-inputs {
+  /* border: 2px solid font-variant: ;(--border-color-1) !important; */
+  margin-bottom: 5px;
+  width: 210px;
+}
+
 .right-section-head {
   height: 50px;
-  margin-bottom: 16px;
 }
 
 .name {
@@ -137,12 +216,15 @@
 
 .view-div {
   background-color: var(--bg-color-2);
-  padding: 0 7px;
+  padding: 0 3px 0px 2px;
+  height: 39px;
+  border: 2px solid var(--border-color-2);
 }
 
 .view-img {
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
+  display: flex;
 }
 
 .view-img img {
@@ -153,12 +235,13 @@
 .view-text-img {
   background-color: var(--bg-color-3);
   border: 2px solid var(--border-color-1);
-  padding: 3px 5px;
+  padding: 1px 5px;
 }
 
 .text-img {
-  height: 25px;
-  width: 20px;
+  height: 17px;
+  width: 17px;
+  display: flex;
 }
 
 .text-img img {
@@ -171,7 +254,7 @@
 }
 
 .right-section-bottom {
-  height: calc(500px - 50px - 16px);
+  height: calc(600px - 50px);
   background-color: var(--bg-color-2);
   background-image: radial-gradient(rgb(255 255 255 / 5%) 2px, transparent 0);
   background-size: 20px 20px;
@@ -190,10 +273,10 @@
   background-size: 20px 20px;
   background-position: 0px 0px;
   height: 100%;
-  width: 1050px;
+  width: 50%;
 }
 
-.MuiBox-root.css-0 {
+/* .MuiBox-root.css-0 {
   display: flex;
   justify-content: center;
 }
@@ -201,11 +284,11 @@
 path.link {
   fill: none;
   stroke: var(--text-color-1) !important;
-}
+} */
 
 .bottom-section-right {
   background-color: var(--bg-color-2);
-  width: calc(1438px - 1050px);
+  width: 50%;
 }
 
 /*                                      MATERIAL UI COMPONENT TREE_VIEW                                      */
@@ -261,6 +344,102 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
 
 .css-mw75ty-MuiTreeItem2-content.Mui-expanded::before {
   background-color: var(--hr-line-color-1) !important;
+}
+
+/*                                      SIMPLE TREE VIEW                                      */
+.MuiTreeItem-label {
+  font-size: 12px !important;
+}
+
+.MuiTreeItem-iconContainer {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.documentIcon .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/folder-open-svgrepo-com.svg);
+}
+
+.activeDocument .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/folder-active-svgrepo-com.svg);
+}
+
+.muteDocument .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/folder-block-svgrepo-com.svg);
+}
+
+.sessionIcon .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/cabinet-svgrepo-com.svg);
+}
+
+.promotedSession .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/projects-alt-svgrepo-com.svg);
+}
+
+.publishedSession .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/cloud-check-svgrepo-com.svg);
+}
+
+.pauseSession .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/pause-square-svgrepo-com.svg);
+}
+
+.shareSession .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/share-svgrepo-com.svg);
+}
+
+.addSession .Mui-focused {
+  background-color: none !important;
+  border: none;
+}
+
+.addSession {
+  background-color: var(--border-color-1) !important;
+  border-radius: 5px;
+}
+
+.addSession .css-1qdrhs7-MuiTreeItem-content.Mui-selected {
+  background-color: var(--border-color-1) !important;
+}
+
+.addSession .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/add-sm-svgrepo-com.svg);
+}
+
+.agentIcon .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/ai-svgrepo-com.svg);
+}
+
+.responderAgent .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/reply-all-svgrepo-com.svg);
+}
+
+.evaluatorAgent .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/evaluate-all-svgrepo-com.svg);
+}
+
+.judgeAgent .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/list-task-square-svgrepo-com.svg);
+}
+
+.dpAgent .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/processor-svgrepo-com.svg);
+}
+
+.historyIcon .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/file-text-svgrepo-com.svg);
+}
+
+.trashIcon .MuiTreeItem-iconContainer {
+  background: url(./Assets/SVG/trash-blank-alt-svgrepo-com.svg);
+}
+
+.css-1qdrhs7-MuiTreeItem-content:hover {
+  background-color: var(--bg-color-3) !important;
+}
+
+.css-1qdrhs7-MuiTreeItem-content.Mui-selected {
+  background-color: var(--bg-color-3) !important;
 }
 
 /*                                      CODE VIEW                                      */
@@ -344,12 +523,18 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
   width: 834px;
 }
 
+button.accordion-button {
+  padding: 8px !important;
+  font-size: 12px !important;
+}
+
 .session-body-content {
   display: grid;
-  grid-template-columns: 100px auto 220px 80px;
+  grid-template-columns: 100px auto 190px 50px;
   align-items: center;
   border-bottom: 2px solid var(--border-color-2);
-  padding: 10px 0;
+  padding: 5px 0;
+  font-size: 12px;
 }
 
 .session-num
@@ -401,17 +586,12 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
   justify-content: flex-end;
 }
 
-.session-user-profile {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-.session-user-profile img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  object-fit: contain;
+.custom-session-profile {
+  height: 25px !important;
+  width: 25px !important;
+  color: var(--text-color-1) !important;
+  background-color: var(--bg-color-5) !important;
+  font-size: 9px !important;
 }
 
 .session-filter-search {
@@ -425,6 +605,7 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
   align-items: center;
   border: 2px solid var(--border-color-2);
   padding: 2px 8px;
+  height: 36px;
 }
 
 .search-session input {
@@ -457,6 +638,10 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
 
 .css-t3ipsp-control {
   background-color: var(--bg-color-2) !important;
+}
+
+.css-1nmdiq5-menu {
+  border: 2px solid var(--border-color-2) !important;
 }
 
 .css-i4bv87-MuiSvgIcon-root {
@@ -507,9 +692,105 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
   border-radius: 2px;
 }
 
+/*                                      DOCUMENT PROCESS                                      */
+.doc-text {
+  font-size: 14px;
+}
+
+.doc-upload-btn {
+  background-color: var(--bg-color-3);
+  border: 2px solid var(--border-color-1);
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.doc {
+  font-size: 12px;
+}
+
+.docq-text {
+  color: var(--box-shadow-terminate);
+  font-weight: 700;
+}
+
+span.fileType {
+  color: #1ac01a;
+}
+
+span.fileSize {
+  color: #4d84c3;
+}
+
+span.processing-action {
+  color: var(--border-process);
+}
+
+span.completed-action {
+  color: var(--text-color-3);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: rotate 2s infinite;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.loader-stop {
+  display: inline-block;
+  padding: 0 10px;
+  transform: rotate(90deg);
+}
+
+/*                                      DOCUMENT INDEX                                      */
+
+.doc-index {
+  margin-bottom: 8px;
+}
+
+.search-index {
+  height: 25px;
+}
+
+.index-logo {
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
+}
+
+.index-logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.activeMuteIndex {
+  border: 2px solid var(--border-color-2);
+  padding: 1px 3px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.activeIndex {
+  background-color: #0c440c;
+  border: 2px solid var(--box-shadow-active);
+}
+
+.muteIndex {
+  background-color: #464646;
+  border: 2px solid var(--box-shadow-terminate);
+}
+
 /*                                      DATABASE                                      */
 
-.database {
+/* .database {
   position: relative;
 }
 
@@ -545,4 +826,4 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
   border: 2px solid var(--border-terminate);
   background: var(--bg-terminate);
   box-shadow: 1px 1px 8px 0px var(--box-shadow-terminate);
-}
+} */

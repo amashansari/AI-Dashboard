@@ -45,7 +45,7 @@ const CustomSidebar = () => {
             <img src={LogoImg6} alt="" />
           </div>
           <div className="logo-profile">
-            <Avatar>AA</Avatar>
+            <Avatar className="custom-side-profile">AA</Avatar>
           </div>
         </div>
       </div>

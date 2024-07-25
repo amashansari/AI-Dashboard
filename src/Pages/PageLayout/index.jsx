@@ -3,25 +3,48 @@ import FileExplorer from "../../Components/Tree-View";
 import Logo1 from "../../Assets/SVG/code-editor.svg";
 import Logo2 from "../../Assets/SVG/source-control.svg";
 import CustomSessions from "../../Components/Sessions";
-import CustomAIComp from "../../Components/AI-Components";
-import CustomDatabases from "../../Components/Databases";
+// import CustomAIComp from "../../Components/AI-Components";
+// import CustomDatabases from "../../Components/Databases";
 import SearchIcon from "@mui/icons-material/Search";
-import ProductsPage from "../../Components/AI-Components";
+// import ProductsPage from "../../Components/AI-Components";
+import DocumentsProcess from "../../Components/DocumentsProcess";
+import DocumentIndex from "../../Components/DocumentIndex";
+import { useSelector } from "react-redux";
 
 const CustomPageLayout = () => {
-  const [openSearchSession, setOpenSearchSession] = useState("")
+const sessionToggle = useSelector((state) => state.sessionShow)
   return (
     <>
       <div className="main-page-layout-container">
         <div className="layout-top-section d-flex">
           <div className="top-left-section rounded-2 p-3 overflow-y-auto">
-            <div className="tree-section-top d-flex justify-content-between">
-              <span>Code Transform</span>
-              <SearchIcon></SearchIcon>
-            </div>
+            <div className="folder-section">
+              <div className="tree-section-top d-flex justify-content-between">
+                <span>Code Transform</span>
+                <SearchIcon></SearchIcon>
+              </div>
               <hr />
-            <div className="tree-view">
-              <FileExplorer />
+              <div className="tree-view">
+                <FileExplorer />
+              </div>
+              <div className={`add-session-card p-2 ${sessionToggle === true ? 'showSession' : ''}`}>
+                <div className="add-session-text d-flex justify-content-between">
+                  <span>Add New Session's</span>
+                  &gt;
+                </div>
+                <hr />
+                <div className= "add-session-inputs ">
+                  <div className="search-session search-index create-session-inputs rounded-2">
+                    <input type="text" placeholder="Session Name" />
+                  </div>
+                  <div className="search-session search-index create-session-inputs rounded-2">
+                    <input type="text" placeholder="Session Description" />
+                  </div>
+                  <div className="search-session search-index create-session-inputs rounded-2">
+                    <input type="text" placeholder="Session Searchable tags" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="top-right-section">
@@ -59,10 +82,12 @@ const CustomPageLayout = () => {
         <div className="layout-bottom-section rounded-2">
           <div className="bottom-section-left rounded-2">
             {/* <CustomAIComp /> */}
-            <ProductsPage />
+            {/* <ProductsPage /> */}
+            <DocumentsProcess />
           </div>
           <div className="bottom-section-right rounded-2">
-            <CustomDatabases />
+            {/* <CustomDatabases /> */}
+            <DocumentIndex />
           </div>
         </div>
       </div>
