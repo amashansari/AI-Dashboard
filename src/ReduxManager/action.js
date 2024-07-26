@@ -11,3 +11,17 @@ export const toggleAiChat = (aichat) => {
     payload: aichat,
   };
 };
+
+export const toggleRefDoc = (refdoc) => {
+  return {
+    type: "REF_DOC_TOGGLE",
+    payload: refdoc,
+  };
+};
+
+export const sessionDetail = (sessDetail) => {
+  return {
+    type: "TOGGLE_SESSION_DETAIL",
+    payload: sessDetail,
+  };
+};

@@ -15,8 +15,11 @@ import {
   yellow,
 } from "@mui/material/colors";
 import ReactSelect from "react-select";
+import { useDispatch } from "react-redux";
+import { sessionDetail } from "../../ReduxManager/action";
 
 const CustomSessions = () => {
+  const dispatch = useDispatch();
   const [CityName, setCityName] = useState("");
   const [CityNameValue, setCityNameValue] = useState([]);
 
@@ -47,6 +50,11 @@ const CustomSessions = () => {
     setCityNameValue(val);
   }
 
+  const [toggleSessionDetail, setToggleSessionDetail] = useState(false);
+  const handleSessionDetail = () => {
+    setToggleSessionDetail(!toggleSessionDetail);
+    dispatch(sessionDetail(toggleSessionDetail));
+  };
   return (
     <>
       <div className="main-sessions-container d-flex p-2 gap-3">
@@ -66,7 +74,10 @@ const CustomSessions = () => {
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
-                  <div className="accordian-body-content session-body-content">
+                  <div
+                    className="accordian-body-content session-body-content"
+                    onClick={handleSessionDetail}
+                  >
                     <div className="session-num">
                       <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
                       QST-201

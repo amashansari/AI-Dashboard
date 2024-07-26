@@ -349,18 +349,6 @@ const CustomTreeItem = styled(TreeItem)(({ theme }) => ({
   },
 }));
 
-function ExpandIcon(props) {
-  return <AddBoxRoundedIcon {...props} sx={{ opacity: 0 }} />;
-}
-
-function CollapseIcon(props) {
-  return <IndeterminateCheckBoxRoundedIcon {...props} sx={{ opacity: 0 }} />;
-}
-
-function EndIcon(props) {
-  return <DisabledByDefaultRoundedIcon {...props} sx={{ opacity: 0 }} />;
-}
-
 
 export default function BorderedTreeView() {
   const dispatch = useDispatch();
@@ -374,12 +362,7 @@ export default function BorderedTreeView() {
   return (
     <SimpleTreeView
       aria-label="customized"
-      defaultExpandedItems={["1", "3"]}
-      slots={{
-        expandIcon: ExpandIcon,
-        collapseIcon: CollapseIcon,
-        endIcon: EndIcon,
-      }}
+      defaultExpandedItems={["1", "4"]}
       sx={{ overflowX: "hidden", minHeight: 270, flexGrow: 1, maxWidth: 300 }}
     >
       <CustomTreeItem itemId="1" label="Documents"  className="documentIcon">
