@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Rubik;
+  src: url("../public/Rubik-Regular.ttf");
+}
+
+* {
+  font-family: Rubik !important;
+  color: var(--text-color-1) !important;
+}
+
 :root {
   --bg-color-1: #0a0a0a;
   --bg-color-2: #1c1c1c;
@@ -33,11 +43,6 @@
 
 hr {
   margin: 8px 0 !important;
-}
-
-@font-face {
-  font-family: Rubik;
-  src: url("../public/Rubik-Regular.ttf");
 }
 
 .main-dashboard-container {
@@ -140,6 +145,15 @@ hr {
 
 .tree-section-top hr {
   margin: 5px !important;
+}
+
+.tree-view {
+  color: var(--text-color-1);
+  font-weight: 500;
+}
+
+.css-1rswrde-MuiTreeItem-root .MuiTreeItem-groupTransition {
+  border-left: 2px solid var(--border-color-2) !important;
 }
 
 .top-right-section {
@@ -251,7 +265,6 @@ hr {
   align-items: center;
   height: 100%;
   width: 100%;
-
 }
 
 .send-chat-btn {
@@ -685,6 +698,7 @@ button.accordion-button {
   border: none;
   color: var(--text-color-1);
   padding: 10px;
+  font-size: 12px;
 }
 
 .search-session input:focus {
@@ -714,6 +728,10 @@ button.accordion-button {
 
 .css-1nmdiq5-menu {
   border: 2px solid var(--border-color-2) !important;
+}
+
+div#react-select-2-placeholder {
+  font-size: 12px;
 }
 
 .css-i4bv87-MuiSvgIcon-root {

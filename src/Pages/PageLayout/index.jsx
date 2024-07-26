@@ -7,11 +7,10 @@ import CustomSessions from "../../Components/Sessions";
 // import CustomDatabases from "../../Components/Databases";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
-// import ProductsPage from "../../Components/AI-Components";
 import DocumentsProcess from "../../Components/DocumentsProcess";
 import DocumentIndex from "../../Components/DocumentIndex";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleSession } from "../../ReduxManager/action";
+import { toggleAiChat, toggleSession } from "../../ReduxManager/action";
 
 const CustomPageLayout = () => {
   const sessionToggle = useSelector((state) => state.sessionShow);
@@ -20,9 +19,13 @@ const CustomPageLayout = () => {
   const dispatch = useDispatch();
 
   const handleSessionClose = () => {
-    dispatch(toggleSession(false));
+    dispatch(toggleSession(sessionToggle));
   };
-  
+
+  const handleAiChatClose = () => {
+    dispatch(toggleAiChat(aiChatToggle));
+  };
+
   return (
     <>
       <div className="main-page-layout-container">
@@ -67,14 +70,17 @@ const CustomPageLayout = () => {
             >
               <div className="ai-chat-top">
                 <div className="ai-chat-text d-flex gap-1">
-                  <span > &lt; </span> <span>AI CHAT</span>
+                  <span onClick={handleAiChatClose} className="aichatclose">
+                    &lt;
+                  </span>
+                  <span>AI CHAT</span>
                 </div>
                 <hr />
               </div>
               <div className="ai-chat-mid rounded-2"></div>
               <div className="ai-chat-input">
                 <div className="search-session ai-chat-search search-index rounded-2">
-                  <input type="text" placeholder="Ask AI.." />
+                  <input type="text" placeholder="Chat With AI.." />
                   <div className="send-chat-btn">
                     <SendIcon></SendIcon>
                   </div>
