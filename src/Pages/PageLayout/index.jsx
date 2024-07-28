@@ -107,8 +107,7 @@ const CustomPageLayout = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="ai-chat-input">
+              <div className="ai-chat-input">
               <div className="search-session ai-chat-search search-index rounded-2">
                 <input type="text" placeholder="Chat With AI.." />
                 <div className="send-chat-btn">
@@ -116,6 +115,8 @@ const CustomPageLayout = () => {
                 </div>
               </div>
             </div>
+            </div>
+            
           </div>
         </div>
         <div className="top-right-section">

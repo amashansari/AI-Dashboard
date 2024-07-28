@@ -23,34 +23,14 @@ const CustomSessionsDetail = () => {
           <div className="session-graph rounded-2">
             <div className="week-graph">
               <div className="graph-bars pt-3 d-flex align-items-baseline justify-content-center gap-1">
-                <div className="bar-detail">
-                  <div className="bar bar-1 rounded-1"></div>
-                  <div className="bar-text">Mon</div>
-                </div>
-                <div className="bar-detail">
-                  <div className="bar bar-2 rounded-1"></div>
-                  <div className="bar-text">Tue</div>
-                </div>
-                <div className="bar-detail">
-                  <div className="bar bar-3 rounded-1"></div>
-                  <div className="bar-text">Wed</div>
-                </div>
-                <div className="bar-detail">
-                  <div className="bar bar-4 rounded-1"></div>
-                  <div className="bar-text">Thur</div>
-                </div>
-                <div className="bar-detail">
-                  <div className="bar bar-5 rounded-1"></div>
-                  <div className="bar-text">Fri</div>
-                </div>
-                <div className="bar-detail">
-                  <div className="bar bar-6 rounded-1"></div>
-                  <div className="bar-text">Sat</div>
-                </div>
-                <div className="bar-detail">
-                  <div className="bar bar-7 rounded-1"></div>
-                  <div className="bar-text">Sun</div>
-                </div>
+                {["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"].map(
+                  (day, index) => (
+                    <div className="bar-detail" key={day}>
+                      <div className={`bar bar-${index + 1} rounded-1`}></div>
+                      <div className="bar-text">{day}</div>
+                    </div>
+                  )
+                )}
               </div>
               <div className="session-deatil-week bar-text">
                 Session performance by week
@@ -71,9 +51,7 @@ const CustomSessionsDetail = () => {
               </div>
               <div className="session-state">Session-state : DEV</div>
               <div className="sse d-flex justify-content-between">
-                <div className="session-energy">
-                  Power Consumption: Moderate
-                </div>
+                <div className="session-energy"> &gt; #1 document-2 <span className="fileType">.xls</span></div>
                 <div className="session-share-btn text-decoration-underline">
                   Share Session
                 </div>
@@ -102,12 +80,12 @@ const CustomSessionsDetail = () => {
               </div>
             </div>
             <div className="session-performance-database performance px-1 py-2">
-              <div className="database-name d-flex">
+              {/* <div className="database-name d-flex">
                 <div className="index-logo">
                   <img src={databaseLogo} alt="" />
                 </div>
                 <span>Database Performance for Active session </span>
-              </div>
+              </div> */}
               <div className="database-consumption">
                 Database Consumption: High
               </div>
