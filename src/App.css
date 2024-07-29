@@ -191,6 +191,7 @@ button:hover {
   width: calc(100% - 66px);
   overflow-y: auto;
   padding-right: 8px;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
