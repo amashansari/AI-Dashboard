@@ -313,10 +313,10 @@ const CustomSessions = () => {
             </div>
             <hr />
             <div className="check-box-filter">
-              <FormControlLabel control={<Checkbox />} label="Aquib Kuwari" />
-              <FormControlLabel control={<Checkbox />} label="Salman Shaikh" />
-              <FormControlLabel control={<Checkbox />} label="Amash Ansari" />
-              <FormControlLabel control={<Checkbox />} label="Aarif Ansari" />
+              <FormControlLabel control={<Checkbox className="customCheckbox"/>} label="Aquib Kuwari" />
+              <FormControlLabel control={<Checkbox className="customCheckbox" />} label="Salman Shaikh" />
+              <FormControlLabel control={<Checkbox className="customCheckbox" />} label="Amash Ansari" />
+              <FormControlLabel control={<Checkbox className="customCheckbox" />} label="Aarif Ansari" />
             </div>
             <hr />
             <div className="drop-down-filter">

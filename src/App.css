@@ -812,15 +812,14 @@ button.accordion-button {
   font-size: 12px;
 }
 
-.session-num
-  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+.session-num svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   color: green !important;
   height: 12px !important;
   width: 12px !important;
 }
 
 .mute-session
-  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   color: red !important;
   font-size: 16px !important;
 }
@@ -830,12 +829,12 @@ button.accordion-button {
   justify-content: space-between;
 }
 
-.cpu svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+.cpu svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   font-size: 16px;
 }
 
 .transmission
-  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   font-size: 16px;
 }
 
@@ -896,7 +895,7 @@ button.accordion-button {
   outline: none;
 }
 
-.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium {
+.customCheckbox {
   color: var(--text-color-1) !important;
 }
 
@@ -928,7 +927,7 @@ div#react-select-2-placeholder {
   width: 15px !important;
 }
 
-.css-ahj2mt-MuiTypography-root {
+.MuiFormControlLabel-label {
   font-size: 12px !important;
 }
 
