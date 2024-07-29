@@ -10,14 +10,23 @@ import LogoImg7 from "../../Assets/PNG/Microsoft_365_Copilot_Icon.svg.png";
 import { Avatar } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { toggleAiChat } from "../../ReduxManager/action";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const CustomSidebar = () => {
   const [isAiChat, setIsAiChat] = useState(false);
   const dispatch = useDispatch();
+  const [cookies, setCookie, removeCookie] = useCookies(["username"]);
+  const navigate = useNavigate();
 
   const handleAiChat = () => {
     setIsAiChat(!isAiChat);
     dispatch(toggleAiChat(isAiChat));
+  };
+
+  const handleLogout = () => {
+    removeCookie("username");
+    navigate("/")
   };
   return (
     <>
@@ -50,7 +59,7 @@ const CustomSidebar = () => {
           <div className="sidebar-logo">
             <img src={LogoImg5} alt="" />
           </div>
-          <div className="sidebar-logo">
+          <div className="sidebar-logo" onClick={handleLogout}>
             <img src={LogoImg6} alt="" />
           </div>
           <div className="logo-profile">

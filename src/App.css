@@ -44,6 +44,87 @@ hr {
   margin: 8px 0 !important;
 }
 
+/* //   LOGIN PAGE CSS        /// */
+
+.log-page-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: var(--bg-color-1);
+}
+
+.auth-container {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid var(--border-color-2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-color-1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-color-1);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid var(--border-color-2);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-color-1);
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--border-color-1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+  border-radius: 5px !important;
+}
+
+button:hover {
+  background-color: var(--bg-color-3);
+}
+
+.auth-container p {
+  margin-top: 15px;
+}
+
+.auth-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* /////////////////// */
+
 .main-dashboard-container {
   background-color: var(--bg-color-1);
   color: var(--text-color-1);
@@ -163,14 +244,14 @@ hr {
 
 .chatbot-doc-reference {
   position: absolute;
-  height: 100%;
-  width: 40%;
+  height: calc(100vh - 30px);
+  width: 50%;
   top: 0;
-  left: 0;
+  left: 50%;
   background-color: var(--bg-color-2);
   border: 4px solid var(--border-color-2);
   z-index: 1000;
-  transform: translateX(-100%);
+  transform: translateX(-200%);
   transition: 0.5s ease-in-out;
 }
 
@@ -181,12 +262,13 @@ hr {
 .main-doc-ref-cont {
   height: 100%;
 }
-
 .ref-cont-section {
   border: 2px solid var(--border-color-2);
-  height: calc(100% - 16px - 20px);
+  height: calc(100% - 34px);
   width: 100%;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .ref-top {
@@ -274,8 +356,8 @@ span.ref-name {
   position: absolute;
   top: 0;
   left: 0;
-  width: 270px;
-  height: 600px;
+  width: 50%;
+  height: calc(100vh - 30px);
   background-color: var(--bg-color-2);
   transform: translateX(-100%);
   transition: 0.5s ease;
@@ -292,19 +374,32 @@ span.ref-name {
 
 .ai-chat-mid {
   border: 2px solid var(--border-color-2);
-  height: calc(600px - 8px - 33px - 10px - 25px - 8px - 10px);
+  height: calc(100% - 36px);
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
-.chat-left {
+.chat-1 {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chat-right {
   background-color: var(--border-color-2);
   display: inline-block;
   padding: 0 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
 }
 
-.chat-right-cont {
+.chat-left-cont {
   text-align: justify;
-  width: 90%;
+  width: calc(100% - 10%);
+  background-color: var(--border-color-2);
+  padding: 0 5px;
+  font-size: 15px;
 }
 
 .ref-underline {
@@ -329,6 +424,10 @@ span.ref-name {
   width: 100%;
   opacity: 0.2;
   z-index: -1;
+}
+
+.ai-chat-input {
+  margin-top: 10px;
 }
 
 .send-chat-btn {
@@ -396,6 +495,25 @@ span.ref-name {
 .text-img img {
   height: 100%;
   width: 100%;
+}
+
+.change-state-option {
+  background-color: var(--bg-color-2);
+  border-radius: 5px;
+  z-index: 1000;
+  position: relative;
+  padding: 5px;
+  border: 2px solid var(--border-color-1);
+  margin-top: 10px;
+  display: none;
+}
+
+.change-state-option div{
+  border-bottom: 2px solid var(--border-color-1);
+}
+
+.show-change-state-option {
+  display: block;
 }
 
 .text span {
@@ -756,7 +874,7 @@ button.accordion-button {
   align-items: center;
   border: 2px solid var(--border-color-2);
   padding: 2px 8px;
-  height: 36px;
+  height: 36px !important;
 }
 
 .search-session input {
@@ -764,7 +882,7 @@ button.accordion-button {
   border: none;
   color: var(--text-color-1);
   padding: 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .search-session input:focus {
@@ -1069,7 +1187,7 @@ span.completed-action {
 
 .database-connect {
   border: 2px solid var(--border-color-1);
-  padding:0 2px;
+  padding: 0 2px;
   background-color: var(--bg-color-3);
   border-radius: 5px;
   margin-top: 5px;
@@ -1077,9 +1195,8 @@ span.completed-action {
 
 .database-disconect {
   border: 2px solid var(--border-inactive);
-  padding:0 2px;
+  padding: 0 2px;
   background-color: #501717;
   border-radius: 5px;
   margin-top: 5px;
 }
-

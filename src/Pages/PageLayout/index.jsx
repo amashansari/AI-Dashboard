@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FileExplorer from "../../Components/Tree-View";
-import Logo1 from "../../Assets/SVG/code-editor.svg";
+import Logo1 from "../../Assets/SVG/more-horizontal-svgrepo-com.svg";
 import Logo2 from "../../Assets/SVG/source-control.svg";
 import CustomSessions from "../../Components/Sessions";
 // import CustomAIComp from "../../Components/AI-Components";
@@ -22,9 +22,10 @@ const CustomPageLayout = () => {
   const sessionToggle = useSelector((state) => state.sessionShow);
   const aiChatToggle = useSelector((state) => state.aiChat);
   const docRef = useSelector((state) => state.refDoc);
-  const sessionDetail = useSelector((state) => state.sessDetail)
+  const sessionDetail = useSelector((state) => state.sessDetail);
 
   const [refDocToggle, setRefDocToggle] = useState(false);
+  const [changeSessionState, setChangeSessionState] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -41,6 +42,9 @@ const CustomPageLayout = () => {
     dispatch(toggleRefDoc(refDocToggle));
   };
 
+  const toggleChangeState = () => {
+    setChangeSessionState(!changeSessionState)
+  };
   return (
     <div className="main-page-layout-container">
       <div className="layout-top-section d-flex">
@@ -77,84 +81,49 @@ const CustomPageLayout = () => {
               </div>
             </div>
           </div>
-          <div
-            className={`ai-chat d-flex flex-column justify-content-between p-2 rounded-2 ${
-              aiChatToggle === true ? "showAiChat" : ""
-            }`}
-          >
-            <div className="ai-chat-top">
-              <div className="ai-chat-text d-flex gap-1">
-                <span className="aichatclose" onClick={handleChatClose}>
-                  &lt;
-                </span>
-                <span>AI CHAT</span>
-              </div>
-              <hr />
-            </div>
-            <div className="ai-chat-mid p-2 rounded-2">
-              <div className="chat-1">
-                <div className="chat-left rounded-1">Text to image</div>
-                <div className="chat-right d-flex flex-column align-items-end">
-                  <div className="chat-right-cont">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Cupiditate, quos.
-                    <span
-                      className="ref-name ref-underline"
-                      onClick={handleRefDoc}
-                    >
-                      Reference from document
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="ai-chat-input">
-              <div className="search-session ai-chat-search search-index rounded-2">
-                <input type="text" placeholder="Chat With AI.." />
-                <div className="send-chat-btn">
-                  <SendIcon />
-                </div>
-              </div>
-            </div>
-            </div>
-            
-          </div>
         </div>
         <div className="top-right-section">
           <div className="right-section-head rounded-2 d-flex justify-content-between">
             <div className="name-div">
               <div className="name-div-top d-flex align-items-center gap-3">
-                <div className="name">Project Name</div>
+                <div className="name">Session Name</div>
                 <span className="config-flow rounded-1">Under Development</span>
               </div>
               <div className="name-div-bottom">
                 Now you are using the beta version of kayoo
               </div>
             </div>
-            <div className="view-div d-flex align-items-center gap-2 rounded-3">
-              <div className="view-img">
-                <img src={Logo1} alt="" />
+            <div className="session-state-control">
+              <div className="view-div d-flex align-items-center gap-2 rounded-3 ">
+                <div className="view-img" onClick={toggleChangeState}>
+                  <img src={Logo1} alt="" />
+                </div>
+                <div className="view-text-img d-flex align-items-center rounded-3 gap-2">
+                  <div className="text-img">
+                    <img src={Logo2} alt="" />
+                  </div>
+                  <div className="text">
+                    <span>Session State</span>
+                  </div>
+                </div>
               </div>
-              <div className="view-text-img d-flex align-items-center rounded-3 gap-2">
-                <div className="text-img">
-                  <img src={Logo2} alt="" />
-                </div>
-                <div className="text">
-                  <span>Flow View</span>
-                </div>
+              <div className={`change-state-option ${changeSessionState === true ? "show-change-state-option" : ""}`}>
+                <div>Dev</div>
+                <div>Dev</div>
+                <div>Dev</div>
+                <div>Dev</div>
               </div>
             </div>
           </div>
           <div className="right-section-bottom rounded-2">
             <CustomSessions />
           </div>
+
           <div
-            className={`chatbot-doc-reference rounded-2 p-2 ${
-              docRef === true ? "chatbot-doc-reference-show" : ""
+            className={`session-detail rounded-2 p-2 ${
+              sessionDetail === true ? "session-detail-show" : ""
             }`}
           >
-            <CustomChatRef />
-          </div>
-          <div className={`session-detail rounded-2 p-2 ${sessionDetail === true ? "session-detail-show" : ""}` }>
             <CustomSessionsDetail />
           </div>
         </div>
@@ -166,6 +135,53 @@ const CustomPageLayout = () => {
         <div className="bottom-section-right rounded-2">
           <DocumentIndex />
         </div>
+      </div>
+      <div
+        className={`ai-chat d-flex flex-column justify-content-between p-2 rounded-2 ${
+          aiChatToggle === true ? "showAiChat" : ""
+        }`}
+      >
+        <div className="ai-chat-top">
+          <div className="ai-chat-text d-flex gap-1">
+            <span className="aichatclose" onClick={handleChatClose}>
+              &lt;
+            </span>
+            <span>AI CHAT</span>
+          </div>
+          <hr />
+        </div>
+        <div className="ai-chat-mid p-2 rounded-2">
+          <div className="chat-1">
+            <div className="chat-right-container text-end">
+              <div className="chat-right rounded-1">Text to image</div>
+            </div>
+            <div className="chat-left">
+              <div className="chat-left-cont rounded-1">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
+                voluptate ratione fuga dignissimos assumenda placeat temporibus
+                beatae.
+                <span className="ref-name ref-underline" onClick={handleRefDoc}>
+                  Reference from document
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="ai-chat-input">
+            <div className="search-session ai-chat-search search-index rounded-2">
+              <input type="text" placeholder="Chat With AI.." />
+              <div className="send-chat-btn">
+                <SendIcon />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`chatbot-doc-reference rounded-2 p-2 ${
+          docRef === true ? "chatbot-doc-reference-show" : ""
+        }`}
+      >
+        <CustomChatRef />
       </div>
     </div>
   );
