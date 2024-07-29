@@ -13,6 +13,8 @@
   --bg-color-3: #34233e;
   --bg-color-4: #ffffff;
   --bg-color-5: #878787;
+  --bg-color-6: #484848;
+  --bg-color-7: #5a5a5a;
 
   --bg-active: #2c532c;
   --bg-process: #7b5e29;
@@ -498,18 +500,22 @@ span.ref-name {
 }
 
 .change-state-option {
-  background-color: var(--bg-color-2);
+  background-color: var(--bg-color-6);
   border-radius: 5px;
   z-index: 1000;
   position: relative;
-  padding: 5px;
-  border: 2px solid var(--border-color-1);
   margin-top: 10px;
   display: none;
+  border-radius: 5px;
+}
+
+.change-state-option div:hover{
+  border-radius : 5px;
+  background-color: var(--bg-color-7);
 }
 
 .change-state-option div{
-  border-bottom: 2px solid var(--border-color-1);
+padding: 5px;
 }
 
 .show-change-state-option {
