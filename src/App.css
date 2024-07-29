@@ -149,6 +149,8 @@ button:hover {
 
 .sidebar-logo {
   margin-bottom: 15px;
+  padding: 5px;
+  border: 2px solid transparent;
 }
 
 .ai-chat-logo {
@@ -161,12 +163,11 @@ button:hover {
   width: 100%;
 }
 
-.active {
+.sidebar-logo:hover {
   background-color: var(--bg-color-3);
   padding: 5px;
   border: 2px solid var(--border-color-1);
   border-radius: 5px;
-  stroke: var(--border-color-1) !important;
 }
 
 .sidebar-bottom {
@@ -880,7 +881,7 @@ button.accordion-button {
   align-items: center;
   border: 2px solid var(--border-color-2);
   padding: 2px 8px;
-  height: 36px !important;
+  /* height: 36px !important; */
 }
 
 .search-session input {
@@ -895,9 +896,7 @@ button.accordion-button {
   outline: none;
 }
 
-.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root,
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
-.css-19bb58m {
+.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium {
   color: var(--text-color-1) !important;
 }
 

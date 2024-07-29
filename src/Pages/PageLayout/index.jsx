@@ -108,10 +108,10 @@ const CustomPageLayout = () => {
                 </div>
               </div>
               <div className={`change-state-option ${changeSessionState === true ? "show-change-state-option" : ""}`}>
-                <div>Dev</div>
-                <div>Dev</div>
-                <div>Dev</div>
-                <div>Dev</div>
+                <div>Publish</div>
+                <div>Freeze</div>
+                <div>Promote</div>
+                <div>Share</div>
               </div>
             </div>
           </div>

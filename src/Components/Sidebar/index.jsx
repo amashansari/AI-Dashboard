@@ -39,7 +39,7 @@ const CustomSidebar = () => {
           <div className="sidebar-logo">
             <img src={LogoImg1} alt="" />
           </div>
-          <div className="sidebar-logo active">
+          <div className="sidebar-logo">
             <img src={LogoImg2} alt="" />
           </div>
           <div className="sidebar-logo">
