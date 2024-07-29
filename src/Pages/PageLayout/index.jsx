@@ -119,13 +119,7 @@ const CustomPageLayout = () => {
             <CustomSessions />
           </div>
 
-          <div
-            className={`session-detail rounded-2 p-2 ${
-              sessionDetail === true ? "session-detail-show" : ""
-            }`}
-          >
-            <CustomSessionsDetail />
-          </div>
+         
         </div>
       </div>
       <div className="layout-bottom-section rounded-2">
@@ -183,6 +177,13 @@ const CustomPageLayout = () => {
       >
         <CustomChatRef />
       </div>
+      <div
+            className={`session-detail rounded-2 p-2 ${
+              sessionDetail === true ? "session-detail-show" : ""
+            }`}
+          >
+            <CustomSessionsDetail />
+          </div>
     </div>
   );
 };

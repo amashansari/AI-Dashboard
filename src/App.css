@@ -235,7 +235,7 @@ button:hover {
   font-weight: 500;
 }
 
-.css-1rswrde-MuiTreeItem-root .MuiTreeItem-groupTransition {
+.MuiTreeItem-groupTransition {
   border-left: 2px solid var(--border-color-2) !important;
 }
 
@@ -510,13 +510,13 @@ span.ref-name {
   border-radius: 5px;
 }
 
-.change-state-option div:hover{
-  border-radius : 5px;
+.change-state-option div:hover {
+  border-radius: 5px;
   background-color: var(--bg-color-7);
 }
 
-.change-state-option div{
-padding: 5px;
+.change-state-option div {
+  padding: 5px;
 }
 
 .show-change-state-option {
@@ -818,8 +818,7 @@ button.accordion-button {
   width: 12px !important;
 }
 
-.mute-session
-  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
+.mute-session svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   color: red !important;
   font-size: 16px !important;
 }
@@ -833,8 +832,7 @@ button.accordion-button {
   font-size: 16px;
 }
 
-.transmission
-  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
+.transmission svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   font-size: 16px;
 }
 
@@ -880,7 +878,7 @@ button.accordion-button {
   align-items: center;
   border: 2px solid var(--border-color-2);
   padding: 2px 8px;
-  /* height: 36px !important; */
+  height: 36px !important;
 }
 
 .search-session input {
@@ -922,7 +920,7 @@ div#react-select-2-placeholder {
   font-size: 12px;
 }
 
-.css-i4bv87-MuiSvgIcon-root {
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
   height: 15px !important;
   width: 15px !important;
 }
@@ -1035,7 +1033,12 @@ span.completed-action {
 }
 
 .search-index {
-  height: 25px;
+  height: 25px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--border-color-2);
+  padding: 2px 8px;
 }
 
 .index-logo {
@@ -1110,7 +1113,7 @@ span.completed-action {
 
 .session-detail {
   position: absolute;
-  height: 100%;
+  height: calc(100vh - 32px);
   width: 30%;
   top: 0;
   right: 0;
