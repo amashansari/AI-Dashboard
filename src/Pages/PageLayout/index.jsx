@@ -11,6 +11,7 @@ import DocumentsProcess from "../../Components/DocumentsProcess";
 import DocumentIndex from "../../Components/DocumentIndex";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  expandDiv,
   toggleAiChat,
   toggleRefDoc,
   toggleSession,
@@ -23,6 +24,7 @@ const CustomPageLayout = () => {
   const aiChatToggle = useSelector((state) => state.aiChat);
   const docRef = useSelector((state) => state.refDoc);
   const sessionDetail = useSelector((state) => state.sessDetail);
+  const expandDocumentDiv = useSelector((state) => state.divExpand);
 
   const [refDocToggle, setRefDocToggle] = useState(false);
   const [changeSessionState, setChangeSessionState] = useState(false);
@@ -43,8 +45,10 @@ const CustomPageLayout = () => {
   };
 
   const toggleChangeState = () => {
-    setChangeSessionState(!changeSessionState)
+    setChangeSessionState(!changeSessionState);
   };
+
+ 
   return (
     <div className="main-page-layout-container">
       <div className="layout-top-section d-flex">
@@ -107,7 +111,11 @@ const CustomPageLayout = () => {
                   </div>
                 </div>
               </div>
-              <div className={`change-state-option ${changeSessionState === true ? "show-change-state-option" : ""}`}>
+              <div
+                className={`change-state-option ${
+                  changeSessionState === true ? "show-change-state-option" : ""
+                }`}
+              >
                 <div>Publish</div>
                 <div>Freeze</div>
                 <div>Promote</div>
@@ -118,12 +126,10 @@ const CustomPageLayout = () => {
           <div className="right-section-bottom rounded-2">
             <CustomSessions />
           </div>
-
-         
         </div>
       </div>
       <div className="layout-bottom-section rounded-2">
-        <div className="bottom-section-left rounded-2">
+        <div className={`bottom-section-left rounded-2 ${expandDocumentDiv === true ? "bottom-section-left-expand" : ""}`} >
           <DocumentsProcess />
         </div>
         <div className="bottom-section-right rounded-2">
@@ -178,12 +184,12 @@ const CustomPageLayout = () => {
         <CustomChatRef />
       </div>
       <div
-            className={`session-detail rounded-2 p-2 ${
-              sessionDetail === true ? "session-detail-show" : ""
-            }`}
-          >
-            <CustomSessionsDetail />
-          </div>
+        className={`session-detail rounded-2 p-2 ${
+          sessionDetail === true ? "session-detail-show" : ""
+        }`}
+      >
+        <CustomSessionsDetail />
+      </div>
     </div>
   );
 };

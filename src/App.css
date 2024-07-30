@@ -549,6 +549,18 @@ span.ref-name {
   background-position: 0px 0px;
   height: 100%;
   width: 50%;
+  transition: 0.5s all ease-in-out;
+  transform: translateY(0)
+}
+
+.bottom-section-left-expand {
+  height: calc(100vh - 28px);
+  width: calc(100vw - 90px);
+  position: absolute;
+  /* top: 0; */
+  transform: translateY(-88%);
+  z-index: 2000;
+  transition: all 0.5s ease;
 }
 
 /* .MuiBox-root.css-0 {
@@ -596,6 +608,10 @@ path.link {
 
 svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-MuiSvgIcon-root {
   color: #878787 !important;
+}
+
+.MuiTreeItem-iconContainer svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
+  opacity: 0;
 }
 
 .css-l91gdy {
@@ -797,6 +813,11 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
 
 .active-mute-sessions {
   width: 834px;
+  display: none;
+}
+
+.active-mute-sessions-show {
+  display: block;
 }
 
 button.accordion-button {
@@ -1117,7 +1138,7 @@ span.completed-action {
   height: calc(100vh - 32px);
   width: 30%;
   top: 0;
-  right: 0;
+  right: -10px;
   background-color: var(--bg-color-2);
   border: 4px solid var(--border-color-2);
   z-index: 2000;
@@ -1127,6 +1148,7 @@ span.completed-action {
 
 .session-detail-show {
   transform: translateX(0%);
+  right: 0;
 }
 
 .session-graph {

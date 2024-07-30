@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { expandDiv } from "../../ReduxManager/action";
 
 const DocumentsProcess = () => {
+  const dispatch = useDispatch()
+  const [expandDocument, setExpandDocument] = useState(false);
+
+  const handleDocumentExpand = () => {
+    setExpandDocument(!expandDocument)
+    dispatch(expandDiv(expandDocument))
+
+  }
   return (
     <>
       <div className="main-document-process-container p-2">
         <div className="doc-top d-flex justify-content-between">
           <div className="doc-text ">Documents</div>
-          <div className="doc-upload-btn doc-text">Upload</div>
+          <div className="expand-upload d-flex gap-2">
+            <div className="doc-upload-btn doc-text" onClick={handleDocumentExpand}>{expandDocument ? `X`: `Expand Div`}</div>
+            <div className="doc-upload-btn doc-text">Upload</div>
+          </div>
         </div>
         <hr />
         <div className="doc-main">

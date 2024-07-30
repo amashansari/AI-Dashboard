@@ -25,3 +25,17 @@ export const sessionDetail = (sessDetail) => {
     payload: sessDetail,
   };
 };
+
+export const expandDiv = (expDiv) => {
+  return {
+    type: "EXPAND_DIV",
+    payload: expDiv,
+  };
+};
+
+export const togActiveMute = (activeMute) => {
+  return {
+    type: "TOGGLE_ACTIVE_MUTE",
+    payload: activeMute,
+  };
+};

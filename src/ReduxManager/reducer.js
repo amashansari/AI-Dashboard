@@ -3,6 +3,8 @@ const initialstate = {
   aiChat: false,
   refDoc: false,
   sessDetail:false,
+  divExpand: false,
+  activeMute: false,
 };
 
 const myReducer = (state = initialstate, action) => {
@@ -15,6 +17,10 @@ const myReducer = (state = initialstate, action) => {
       return { ...state, refDoc: !action.payload };
     case "TOGGLE_SESSION_DETAIL":
       return { ...state, sessDetail: !action.payload };
+    case "EXPAND_DIV":
+      return { ...state, divExpand: !action.payload };
+    case "TOGGLE_ACTIVE_MUTE":
+      return { ...state, activeMute: !action.payload };
     default:
       return state;
   }

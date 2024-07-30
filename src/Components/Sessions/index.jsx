@@ -15,11 +15,12 @@ import {
   yellow,
 } from "@mui/material/colors";
 import ReactSelect from "react-select";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { sessionDetail } from "../../ReduxManager/action";
 
 const CustomSessions = () => {
   const dispatch = useDispatch();
+  const toggleAM = useSelector((state) => state.activeMute)
   const [CityName, setCityName] = useState("");
   const [CityNameValue, setCityNameValue] = useState([]);
 
@@ -55,10 +56,13 @@ const CustomSessions = () => {
     setToggleSessionDetail(!toggleSessionDetail);
     dispatch(sessionDetail(toggleSessionDetail));
   };
+
+
+
   return (
     <>
       <div className="main-sessions-container d-flex p-2 gap-3">
-        <div className="active-mute-sessions">
+        <div className={`active-mute-sessions ${toggleAM === true ? "active-mute-sessions-show" : ""}`}>
           <div className="active-sesssions mb-3">
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
