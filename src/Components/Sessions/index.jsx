@@ -6,6 +6,11 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import AlignVerticalCenterOutlinedIcon from "@mui/icons-material/AlignVerticalCenterOutlined";
 import { Avatar, Checkbox, FormControlLabel } from "@mui/material";
+import frozen from "../../Assets/SVG/projects-alt-svgrepo-com.svg";
+import published from "../../Assets/SVG/publish-svgrepo-com.svg";
+import promoted from "../../Assets/SVG/project-configuration-svgrepo-com.svg";
+import "./Session.css"
+
 import {
   blue,
   deepOrange,
@@ -58,7 +63,125 @@ const CustomSessions = () => {
   return (
     <>
       <div className="main-sessions-container d-flex p-2 gap-3">
-        <div className="active-mute-sessions">
+        <div className="sessions-list-container">
+        <div className="session-content">
+          <div className="session-head">
+            <div className="session-name">Session List</div>
+            <div className="new-session-btn">Create a new session</div>
+          </div>
+          <div className="sessions-list">
+            <div className="list-head">
+              <div className="head-name">Sessions</div>
+              <div className="search-container">
+                <div className="searchbox">
+                  <img src="" alt="" />
+                  <input type="text" placeholder="Search by name" />
+                </div>
+                <div className="filter">
+                  <select name="Filter" id="">
+                    <option value="filter" defaultChecked>
+                      Filter
+                    </option>
+                    <option value="date">date</option>
+                    <option value="active">Active</option>
+                    <option value="Mute">Mute</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div className="session-list-item">
+              <div className="item-name">
+                <div className="name">Session 1</div>
+                <div className="detail">this is session 1 details</div>
+              </div>
+              <div className="item-status">
+                <div className="status-time">last updated on 12:43 p.m</div>
+                <div className="status">
+                  <div className="active-circle"></div> Active
+                </div>
+              </div>
+            </div>
+            <div className="session-list-item">
+              <div className="item-name">
+                <div className="name">Session 2</div>
+                <div className="detail">this is session 2 details</div>
+              </div>
+              <div className="item-status">
+                <div className="frozen">
+                  <div className="frozen-img">
+                    <img src={frozen} alt="" />
+                  </div>
+                  <div className="frozen-text">Frozen</div>
+                </div>
+                {/* <div className="status-time">last updated on 2:21 p.m</div>
+                <div className="status"><div className="active-circle"></div> ctive</div> */}
+              </div>
+            </div>
+            <div className="session-list-item">
+              <div className="item-name">
+                <div className="name">Session 3</div>
+                <div className="detail">this is session 3 details</div>
+              </div>
+              <div className="item-status">
+                <div className="status-time">last updated on 2:23 p.m</div>
+                <div className="status">
+                  <div className="active-circle"></div> Active
+                </div>
+              </div>
+            </div>
+            <div className="session-list-item">
+              <div className="item-name">
+                <div className="name">Session 4</div>
+                <div className="detail">this is session 4 details</div>
+              </div>
+              <div className="item-status">
+                <div className="promoted">
+                  <div className="promoted-img">
+                    <img src={promoted} alt="" />
+                  </div>
+                  <div className="promoted-text">Promoted</div>
+                </div>
+                {/* <div className="status-time">last updated on 6:43 a.m</div>
+                <div className="status">
+                  <div className="active-circle"></div> Active
+                </div> */}
+              </div>
+            </div>
+            <div className="session-list-item">
+              <div className="item-name">
+                <div className="name">Session 5</div>
+                <div className="detail">this is session 5 details</div>
+              </div>
+              <div className="item-status">
+                <div className="published">
+                  <div className="published-img">
+                    <img src={published} alt="" />
+                  </div>
+                  <div className="published-text">Published</div>
+                </div>
+                {/* <div className="status-time">last updated on 12:43 p.m</div>
+                <div className="status">
+                  <div className="active-circle"></div> Active
+                </div> */}
+              </div>
+            </div>
+            <div className="session-list-item">
+              <div className="item-name">
+                <div className="name">Session 6</div>
+                <div className="detail">this is session 6 details</div>
+              </div>
+              <div className="item-status">
+                <div className="status-time">last updated on 12:10 p.m</div>
+                <div className="status">
+                  <div className="active-circle"></div> Active
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        {/* <div className="active-mute-sessions">
           <div className="active-sesssions mb-3">
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
@@ -296,7 +419,7 @@ const CustomSessions = () => {
               </Accordion.Item>
             </Accordion>
           </div>
-        </div>
+        </div> */}
         <div className="session-filter-search rounded-3 p-2">
           <div className="session-container">
             <div className="search-session rounded-2">
@@ -330,6 +453,12 @@ const CustomSessions = () => {
             </div>
           </div>
         </div>
+        {/* <div className="create-session-modal">
+          <div className="modal-heading">
+            <div className="modal-name">Create New Session</div>
+
+          </div>
+        </div> */}
       </div>
     </>
   );
