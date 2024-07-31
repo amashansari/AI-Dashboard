@@ -32,10 +32,10 @@ const DocumentIndex = () => {
             </div>
             <div className="doc-index-right">
               <span className="activeIndex activeMuteIndex">
-                Active <img src={ActiveImg} alt="" />
+                Active 
               </span>
               <span className=" activeMuteIndex">
-                Mute <img src={InactiveImg} alt="" />
+                Mute 
               </span>
             </div>
           </div>
@@ -50,10 +50,10 @@ const DocumentIndex = () => {
             </div>
             <div className="doc-index-right">
               <span className=" activeMuteIndex">
-                Active <img src={ActiveImg} alt="" />
+                Active 
               </span>
               <span className="muteIndex activeMuteIndex">
-                Mute <img src={InactiveImg} alt="" />
+                Mute 
               </span>
             </div>
           </div>
@@ -68,10 +68,10 @@ const DocumentIndex = () => {
             </div>
             <div className="doc-index-right">
               <span className=" activeMuteIndex">
-                Active <img src={ActiveImg} alt="" />
+                Active 
               </span>
               <span className=" activeMuteIndex">
-                Mute <img src={InactiveImg} alt="" />
+                Mute 
               </span>
             </div>
           </div>
@@ -86,10 +86,10 @@ const DocumentIndex = () => {
             </div>
             <div className="doc-index-right">
               <span className=" activeMuteIndex">
-                Active <img src={ActiveImg} alt="" />
+                Active 
               </span>
               <span className="muteIndex activeMuteIndex">
-                Mute <img src={InactiveImg} alt="" />
+                Mute 
               </span>
             </div>
           </div>
@@ -104,10 +104,10 @@ const DocumentIndex = () => {
             </div>
             <div className="doc-index-right">
               <span className="activeIndex activeMuteIndex">
-                Active <img src={ActiveImg} alt="" />
+                Active 
               </span>
               <span className=" activeMuteIndex">
-                Mute <img src={InactiveImg} alt="" />
+                Mute 
               </span>
             </div>
           </div>
@@ -122,10 +122,10 @@ const DocumentIndex = () => {
             </div>
             <div className="doc-index-right">
               <span className=" activeMuteIndex">
-                Active <img src={ActiveImg} alt="" />
+                Active 
               </span>
               <span className=" activeMuteIndex">
-                Mute <img src={InactiveImg} alt="" />
+                Mute 
               </span>
             </div>
           </div>

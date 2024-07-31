@@ -58,7 +58,7 @@ export default function BorderedTreeView() {
         <CustomTreeItem
           itemId="5"
           label="Active-Mute Sessions"
-          className="promotedSession"
+          className="judgeAgent"
           onClick={handleToggleAM}
         />
         <CustomTreeItem

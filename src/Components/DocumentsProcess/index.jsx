@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { expandDiv } from "../../ReduxManager/action";
+import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
 
 const DocumentsProcess = () => {
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ const DocumentsProcess = () => {
         <div className="doc-top d-flex justify-content-between">
           <div className="doc-text ">Documents</div>
           <div className="expand-upload d-flex gap-2">
-            <div className="doc-upload-btn doc-text" onClick={handleDocumentExpand}>{expandDocument ? `X`: `Expand Div`}</div>
+            <div className="doc-upload-btn doc-text" onClick={handleDocumentExpand}>{expandDocument ? `X`: <OpenInFullOutlinedIcon></OpenInFullOutlinedIcon>}</div>
             <div className="doc-upload-btn doc-text">Upload</div>
           </div>
         </div>

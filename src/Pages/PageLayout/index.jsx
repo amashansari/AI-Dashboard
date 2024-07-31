@@ -4,7 +4,7 @@ import Logo1 from "../../Assets/SVG/more-horizontal-svgrepo-com.svg";
 import Logo2 from "../../Assets/SVG/source-control.svg";
 import CustomSessions from "../../Components/Sessions";
 // import CustomAIComp from "../../Components/AI-Components";
-// import CustomDatabases from "../../Components/Databases";
+import CustomDatabases from "../../Components/Databases";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
 import DocumentsProcess from "../../Components/DocumentsProcess";
@@ -132,8 +132,11 @@ const CustomPageLayout = () => {
         <div className={`bottom-section-left rounded-2 ${expandDocumentDiv === true ? "bottom-section-left-expand" : ""}`} >
           <DocumentsProcess />
         </div>
-        <div className="bottom-section-right rounded-2">
+        <div className="bottom-section-mid rounded-2">
           <DocumentIndex />
+        </div>
+        <div className="bottom-section-right rounded-2">
+          <CustomDatabases />
         </div>
       </div>
       <div
