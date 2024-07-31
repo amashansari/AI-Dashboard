@@ -9,20 +9,10 @@ import { Avatar, Checkbox, FormControlLabel } from "@mui/material";
 import frozen from "../../Assets/SVG/projects-alt-svgrepo-com.svg";
 import published from "../../Assets/SVG/publish-svgrepo-com.svg";
 import promoted from "../../Assets/SVG/project-configuration-svgrepo-com.svg";
-import "./Session.css";
-
-import {
-  blue,
-  deepOrange,
-  deepPurple,
-  green,
-  pink,
-  yellow,
-} from "@mui/material/colors";
+// import './Session.css'
 import ReactSelect from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { sessionDetail } from "../../ReduxManager/action";
-import TagInput from "../AI-Components/TagsInput";
 import CreateSessionModal from "../AI-Components/CreateSessionModal";
 
 const CustomSessions = () => {
