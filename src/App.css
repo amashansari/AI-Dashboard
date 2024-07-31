@@ -1131,7 +1131,7 @@ span.completed-action {
 }
 
 .database-state-disconnect svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
-  color: #a93a3a;
+  color: #a93a3ay;
 }
 
 /*                                      SESSION DETAIL                                      */
@@ -1280,139 +1280,251 @@ span.completed-action {
 }
 
 .list-head {
+   color: var(--text-color-1);
+  cursor: pointer;
+}
+
+.create-session-modal {
+  position: absolute;
+  width: 500px;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding-bottom: 8px;
+  flex-direction: column;
+  background-color: var(--bg-color-2);
+  padding: 25px;
+  gap: 20px;
+  border-radius: 12px;
+  border: 2px solid dimgray;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color-1);
+
+  border: "2px solid #000";
+  /* box-shadow: #34233e; */
 }
 
-.head-name {
-  font-size: 17px;
+.modal-head {
+  text-align: center;
 }
 
-.search-container {
+.modal-session-name,
+.modal-session-desc {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+  color: #cac8cc;
+  gap: 3px;
 }
 
-.searchbox input {
+.modal-session-name input {
+  font-size: 16px;
   background-color: transparent;
-  border: none;
-  width: 120px;
-  font-size: 12px;
-  margin: 2px;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid dimgray;
+  margin-bottom: 15px;
+  color: var(--text-color-1);
 }
 
-.filter {
-  padding: 0px 5px;
+.modal-session-desc textarea {
   font-size: 14px;
-  border-left: 2px solid var(--bordercolor);
-}
-
-.filter select {
   background-color: transparent;
-  border: none;
-  color: var(--textcolor);
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid dimgray;
+  color: var(--text-color-1);
 }
 
-.session-list-item {
-  padding: 8px 0px;
-  border-top: 2px solid var(--bordercolor);
+.modal-session-name input:focus,
+.modal-session-desc textarea:focus {
+  outline: none;
+}
+
+.upload-box {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+
+.custum-file-upload {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e8e8e8;
+  background-color: #212121;
+  padding: 1.5rem;
+  border-radius: 10px;
+  /* box-shadow: 0px 48px 35px -48px #e8e8e8; */
+}
+
+.custum-file-upload .icon {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.sessions-list:nth-child(2) {
-  margin-top: 8px;
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: #e8e8e8;
 }
 
-.item-name .name {
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: #e8e8e8;
+}
+
+.custum-file-upload input {
+  display: none;
+}
+
+.modal-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-submit {
+  padding: 8px 12px;
+  background-color: var(--text-color-3);
+  border-radius: 8px;
+  display: inline-block;
   font-size: 14px;
-  color: var(--textcolor);
 }
 
-.item-name .detail {
-  font-size: 12px;
-  color: var(--textcolorsecondary);
+.modal-close {
+  padding: 8px 12px;
+  background-color: var(--bg-color-6);
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.item-status {
+/***********  Add Tags  ****************/
+.tag-input-container {
   display: flex;
-  gap: 15px;
-  font-size: 12px;
-  align-items: center;
-}
-
-.status-time {
-  color: var(--textcolorsecondary);
-}
-
-.status {
-  display: flex;
-  color: var(--textcolortertiary);
-  font-size: 13px;
-  align-items: center;
-  gap: 5px;
-}
-
-.active-circle {
-  width: 6px;
-  height: 6px;
-  border-radius: 22px;
-  background-color: rgb(70, 238, 27);
-}
-
-.frozen {
-  border-radius: 22px;
-  background-color: var(--textcolorsecondary);
-  padding: 5px 9px;
-  display: flex;
-  gap: 5px;
-}
-
-.frozen-img {
-  width: 12px;
-  height: 12px;
-}
-
-.frozen-img img {
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
 }
 
-.frozen-text {
-  padding-bottom: 1px;
+.tag-input-container input {
+  padding: 10px;
+  border: 1px solid #a8a8a8;
+  border-radius: 4px;
+  background-color: transparent;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--text-color-1);
 }
 
-.published {
+.tag-input-container input:focus {
+  outline: none;
+}
+
+.tags-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
-  padding: 5px 9px;
-  background-color: #6e339191;
-  border-radius: 25px;
 }
 
-.published-img,
-.promoted-img {
-  width: 12px;
-  height: 12px;
+.tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border: 1px solid dimgrey;
 }
 
-.published-img img,
-.promoted-img img {
+.tag-close-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 16px;
+
+}  span {
+  font-weight: 400;
+  color: #e8e8e8;
+}
+
+.custum-file-upload input {
+  display: none;
+}
+
+.modal-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-submit {
+  padding: 8px 12px;
+  background-color: var(--text-color-3);
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.modal-close {
+  padding: 8px 12px;
+  background-color: var(--bg-color-6);
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/***********  Add Tags  ****************/
+.tag-input-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
 }
 
-.published-text {
-  color: var(--textcolor);
+.tag-input-container input {
+  padding: 10px;
+  border: 1px solid #a8a8a8;
+  border-radius: 4px;
+  background-color: transparent;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--text-color-1);
 }
 
-.promoted {
+.tag-input-container input:focus {
+  outline: none;
+}
+
+.tags-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
-  border-radius: 25px;
-  background-color: #57d14e87;
-  padding: 5px 9px;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border: 1px solid dimgrey;
+}
+
+.tag-close-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
