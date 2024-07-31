@@ -9,7 +9,6 @@ import { Avatar, Checkbox, FormControlLabel } from "@mui/material";
 import frozen from "../../Assets/SVG/projects-alt-svgrepo-com.svg";
 import published from "../../Assets/SVG/publish-svgrepo-com.svg";
 import promoted from "../../Assets/SVG/project-configuration-svgrepo-com.svg";
-// import './Session.css'
 import ReactSelect from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { sessionDetail } from "../../ReduxManager/action";
@@ -70,7 +69,7 @@ const CustomSessions = () => {
           >
             <div className="session-head">
               <div className="session-name">Session List</div>
-              <CreateSessionModal/>
+              <CreateSessionModal />
             </div>
             <div className="sessions-list">
               <div className="list-head">
@@ -172,7 +171,6 @@ const CustomSessions = () => {
                 </div>
               </div>
             </div>
-            {/* <CreateSessionModal/> */}
           </div>
         </div>
 
