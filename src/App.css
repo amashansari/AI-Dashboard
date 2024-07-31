@@ -550,7 +550,7 @@ span.ref-name {
   height: 100%;
   width: 50%;
   transition: 0.5s all ease-in-out;
-  transform: translateY(0)
+  transform: translateY(0);
 }
 
 .bottom-section-left-expand {
@@ -816,7 +816,7 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.labelIcon.MuiBox-root.css-j3q4p-Mu
   position: absolute;
   top: 60px;
   transform: translateX(-100%);
-  transition:all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .active-mute-sessions-show {
@@ -1233,4 +1233,187 @@ span.completed-action {
   background-color: #501717;
   border-radius: 5px;
   margin-top: 5px;
+}
+
+/********* session modal   *************/
+
+.new-session-btn {
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #6e3391;
+  color: var(--text-color-1);
+  cursor: pointer;
+}
+
+.create-session-modal {
+  position: absolute;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color-2);
+  padding: 25px;
+  gap: 20px;
+  border-radius: 12px;
+  border: 2px solid dimgray;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color-1);
+
+  border: "2px solid #000";
+  /* box-shadow: #34233e; */
+}
+
+.modal-head {
+  text-align: center;
+}
+
+.modal-session-name,
+.modal-session-desc {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #cac8cc;
+  gap: 3px;
+}
+
+.modal-session-name input {
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid dimgray;
+  margin-bottom: 15px;
+  color: var(--text-color-1);
+}
+
+.modal-session-desc textarea {
+  font-size: 14px;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid dimgray;
+  color: var(--text-color-1);
+}
+
+.modal-session-name input:focus,
+.modal-session-desc textarea:focus {
+  outline: none;
+}
+
+.upload-box {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+
+.custum-file-upload {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e8e8e8;
+  background-color: #212121;
+  padding: 1.5rem;
+  border-radius: 10px;
+  /* box-shadow: 0px 48px 35px -48px #e8e8e8; */
+}
+
+.custum-file-upload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: #e8e8e8;
+}
+
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: #e8e8e8;
+}
+
+.custum-file-upload input {
+  display: none;
+}
+
+.modal-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-submit {
+  padding: 8px 12px;
+  background-color: var(--text-color-3);
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.modal-close {
+  padding: 8px 12px;
+  background-color: var(--bg-color-6);
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/***********  Add Tags  ****************/
+.tag-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tag-input-container input {
+  padding: 10px;
+  border: 1px solid #a8a8a8;
+  border-radius: 4px;
+  background-color: transparent;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--text-color-1);
+}
+
+.tag-input-container input:focus {
+  outline: none;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border: 1px solid dimgrey;
+}
+
+.tag-close-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
