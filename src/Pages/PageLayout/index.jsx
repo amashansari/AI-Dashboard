@@ -19,6 +19,7 @@ import {
 import CustomChatRef from "../../Components/ChatAiRef";
 import CustomSessionsDetail from "../../Components/SessionDetail";
 
+
 const CustomPageLayout = () => {
   const sessionToggle = useSelector((state) => state.sessionShow);
   const aiChatToggle = useSelector((state) => state.aiChat);
@@ -48,7 +49,6 @@ const CustomPageLayout = () => {
     setChangeSessionState(!changeSessionState);
   };
 
- 
   return (
     <div className="main-page-layout-container">
       <div className="layout-top-section d-flex">
@@ -147,9 +147,8 @@ const CustomPageLayout = () => {
         <div className="ai-chat-top">
           <div className="ai-chat-text d-flex gap-1">
             <span className="aichatclose" onClick={handleChatClose}>
-              &lt;
+              &lt; AI Chat
             </span>
-            <span>AI CHAT</span>
           </div>
           <hr />
         </div>
