@@ -3,21 +3,25 @@ import { useDispatch } from "react-redux";
 import { expandDiv } from "../../ReduxManager/action";
 
 const DocumentsProcess = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [expandDocument, setExpandDocument] = useState(false);
 
   const handleDocumentExpand = () => {
-    setExpandDocument(!expandDocument)
-    dispatch(expandDiv(expandDocument))
-
-  }
+    setExpandDocument(!expandDocument);
+    dispatch(expandDiv(expandDocument));
+  };
   return (
     <>
       <div className="main-document-process-container p-2">
         <div className="doc-top d-flex justify-content-between">
           <div className="doc-text ">Documents</div>
           <div className="expand-upload d-flex gap-2">
-            <div className="doc-upload-btn doc-text" onClick={handleDocumentExpand}>{expandDocument ? `X`: `Expand Div`}</div>
+            <div
+              className="doc-upload-btn doc-text"
+              onClick={handleDocumentExpand}
+            >
+              {expandDocument ? `X` : `Expand Div`}
+            </div>
             <div className="doc-upload-btn doc-text">Upload</div>
           </div>
         </div>
@@ -30,7 +34,21 @@ const DocumentsProcess = () => {
             </div>
             <div className="doc-right">
               <span className="fileSize">246kb</span>
-              <span className="loader">|</span>
+              {/* <span className="loader">|</span> */}
+              <div class="loader">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+                <div class="bar5"></div>
+                <div class="bar6"></div>
+                <div class="bar7"></div>
+                <div class="bar8"></div>
+                <div class="bar9"></div>
+                <div class="bar10"></div>
+                <div class="bar11"></div>
+                <div class="bar12"></div>
+              </div>
               <span className="fileAction processing-action">
                 ...processing
               </span>
