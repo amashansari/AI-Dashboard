@@ -24,12 +24,6 @@ const CustomTreeItem = styled(TreeItem)(({ theme }) => ({
 
 export default function BorderedTreeView() {
   const dispatch = useDispatch();
-  const [isCreateSession, setIsCreateSession] = useState(false);
-
-  const handleCreateSession = () => {
-    setIsCreateSession(!isCreateSession);
-    dispatch(toggleSession(isCreateSession));
-  };
 
   const [toggleAM, setToggleAM] = useState(false)
   const handleToggleAM = () => {
@@ -58,7 +52,7 @@ export default function BorderedTreeView() {
         <CustomTreeItem
           itemId="5"
           label="Active-Mute Sessions"
-          className="promotedSession"
+          className="judgeAgent"
           onClick={handleToggleAM}
         />
         <CustomTreeItem
@@ -85,7 +79,6 @@ export default function BorderedTreeView() {
           itemId="10"
           label="Create Sessions"
           className="addSession"
-          onClick={handleCreateSession}
         />
       </CustomTreeItem>
       <CustomTreeItem itemId="11" label="Agents" className="agentIcon">

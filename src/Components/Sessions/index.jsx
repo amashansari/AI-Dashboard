@@ -9,25 +9,17 @@ import { Avatar, Checkbox, FormControlLabel } from "@mui/material";
 import frozen from "../../Assets/SVG/projects-alt-svgrepo-com.svg";
 import published from "../../Assets/SVG/publish-svgrepo-com.svg";
 import promoted from "../../Assets/SVG/project-configuration-svgrepo-com.svg";
-import "./Session.css";
-
-import {
-  blue,
-  deepOrange,
-  deepPurple,
-  green,
-  pink,
-  yellow,
-} from "@mui/material/colors";
 import ReactSelect from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { sessionDetail } from "../../ReduxManager/action";
+import CreateSessionModal from "../AI-Components/CreateSessionModal";
 
 const CustomSessions = () => {
   const dispatch = useDispatch();
   const toggleAM = useSelector((state) => state.activeMute);
   const [CityName, setCityName] = useState("");
   const [CityNameValue, setCityNameValue] = useState([]);
+  const [modal, setModal] = useState(false);
 
   let CityNameOptions = [
     {
@@ -62,14 +54,22 @@ const CustomSessions = () => {
     dispatch(sessionDetail(toggleSessionDetail));
   };
 
+  const handleModal = () => {
+    setModal(true);
+  };
+
   return (
     <>
       <div className="main-sessions-container d-flex p-2 gap-3">
         <div className="sessions-list-container">
-          <div className={`session-content  ${toggleAM === true ? "session-content-hide" : ""}`}>
+          <div
+            className={`session-content  ${
+              toggleAM === true ? "session-content-hide" : ""
+            }`}
+          >
             <div className="session-head">
               <div className="session-name">Session List</div>
-              <div className="new-session-btn">Create a new session</div>
+              <CreateSessionModal />
             </div>
             <div className="sessions-list">
               <div className="list-head">
@@ -221,248 +221,248 @@ const CustomSessions = () => {
         </div>
       </div>
       <div
-          className={`active-mute-sessions ${
-            toggleAM === true ? "active-mute-sessions-show" : ""
-          }`}
-        >
-          <div className="active-sesssions mb-3">
-            <Accordion defaultActiveKey="0">
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <div className="active-accordian-header d-flex justify-content-between align-items-center w-100">
-                    <div className="acctive-text">Active</div>
-                    <div className="search-session search-index rounded-2">
-                      <input type="text" placeholder="Search Index" />
-                      <div>
-                        <SearchIcon></SearchIcon>
-                      </div>
+        className={`active-mute-sessions ${
+          toggleAM === true ? "active-mute-sessions-show" : ""
+        }`}
+      >
+        <div className="active-sesssions mb-3">
+          <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <div className="active-accordian-header d-flex justify-content-between align-items-center w-100">
+                  <div className="acctive-text">Active</div>
+                  <div className="search-session search-index rounded-2">
+                    <input type="text" placeholder="Search Index" />
+                    <div>
+                      <SearchIcon></SearchIcon>
                     </div>
                   </div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <div
-                    className="accordian-body-content session-body-content"
-                    onClick={handleSessionDetail}
-                  >
-                    <div className="session-num">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>
+                <div
+                  className="accordian-body-content session-body-content"
+                  onClick={handleSessionDetail}
+                >
+                  <div className="session-num">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
                     </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">A</Avatar>
-                      </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
                     </div>
                   </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">A</Avatar>
+                    </div>
+                  </div>
+                </div>
 
-                  <div className="accordian-body-content session-body-content ">
-                    <div className="session-num">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
+                <div className="accordian-body-content session-body-content ">
+                  <div className="session-num">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
                     </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">AK</Avatar>
-                      </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
                     </div>
                   </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">AK</Avatar>
+                    </div>
+                  </div>
+                </div>
 
-                  <div className="accordian-body-content session-body-content ">
-                    <div className="session-num">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
+                <div className="accordian-body-content session-body-content ">
+                  <div className="session-num">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
                     </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">RZ</Avatar>
-                      </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
                     </div>
                   </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">RZ</Avatar>
+                    </div>
+                  </div>
+                </div>
 
-                  <div className="accordian-body-content session-body-content ">
-                    <div className="session-num">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
+                <div className="accordian-body-content session-body-content ">
+                  <div className="session-num">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
                     </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">KK</Avatar>
-                      </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
                     </div>
                   </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">KK</Avatar>
+                    </div>
+                  </div>
+                </div>
 
-                  <div className="accordian-body-content session-body-content ">
-                    <div className="session-num">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
+                <div className="accordian-body-content session-body-content ">
+                  <div className="session-num">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
                     </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">HD</Avatar>
-                      </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
                     </div>
                   </div>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-          </div>
-          <div className="mute-sesssions">
-            <Accordion defaultActiveKey="0">
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <div className="mute-accordian-header d-flex justify-content-between align-items-center w-100">
-                    <div className="mute-text">Mute</div>
-                    <div className="search-session search-index rounded-2">
-                      <input type="text" placeholder="Search Index" />
-                      <div>
-                        <SearchIcon></SearchIcon>
-                      </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">HD</Avatar>
                     </div>
                   </div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <div className="accordian-body-content session-body-content">
-                    <div className="session-num mute-session">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
-                    </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">H</Avatar>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordian-body-content session-body-content ">
-                    <div className="session-num mute-session">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
-                    </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">N</Avatar>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordian-body-content session-body-content ">
-                    <div className="session-num mute-session">
-                      <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
-                      QST-201
-                    </div>
-                    <div className="session-address">
-                      <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
-                      Westheimer Rd. Santa Ana
-                    </div>
-                    <div className="session-cpu-transmission">
-                      <div className="cpu">
-                        <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
-                      </div>
-                      <div className="transmission">
-                        <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
-                        Transmission
-                      </div>
-                    </div>
-                    <div className="profile-img">
-                      <div className="session-user-profile">
-                        <Avatar className="custom-session-profile">OP</Avatar>
-                      </div>
-                    </div>
-                  </div>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-          </div>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </div>
+        <div className="mute-sesssions">
+          <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <div className="mute-accordian-header d-flex justify-content-between align-items-center w-100">
+                  <div className="mute-text">Mute</div>
+                  <div className="search-session search-index rounded-2">
+                    <input type="text" placeholder="Search Index" />
+                    <div>
+                      <SearchIcon></SearchIcon>
+                    </div>
+                  </div>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>
+                <div className="accordian-body-content session-body-content">
+                  <div className="session-num mute-session">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
+                    </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
+                    </div>
+                  </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">H</Avatar>
+                    </div>
+                  </div>
+                </div>
+                <div className="accordian-body-content session-body-content ">
+                  <div className="session-num mute-session">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
+                    </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
+                    </div>
+                  </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">N</Avatar>
+                    </div>
+                  </div>
+                </div>
+                <div className="accordian-body-content session-body-content ">
+                  <div className="session-num mute-session">
+                    <ElectricBoltOutlinedIcon></ElectricBoltOutlinedIcon>
+                    QST-201
+                  </div>
+                  <div className="session-address">
+                    <MultipleStopOutlinedIcon></MultipleStopOutlinedIcon> 2972
+                    Westheimer Rd. Santa Ana
+                  </div>
+                  <div className="session-cpu-transmission">
+                    <div className="cpu">
+                      <AppsOutlinedIcon></AppsOutlinedIcon> Cpu
+                    </div>
+                    <div className="transmission">
+                      <AlignVerticalCenterOutlinedIcon></AlignVerticalCenterOutlinedIcon>
+                      Transmission
+                    </div>
+                  </div>
+                  <div className="profile-img">
+                    <div className="session-user-profile">
+                      <Avatar className="custom-session-profile">OP</Avatar>
+                    </div>
+                  </div>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </div>
+      </div>
     </>
   );
 };

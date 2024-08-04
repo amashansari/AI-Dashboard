@@ -4,7 +4,7 @@ import Logo1 from "../../Assets/SVG/more-horizontal-svgrepo-com.svg";
 import Logo2 from "../../Assets/SVG/source-control.svg";
 import CustomSessions from "../../Components/Sessions";
 // import CustomAIComp from "../../Components/AI-Components";
-// import CustomDatabases from "../../Components/Databases";
+import CustomDatabases from "../../Components/Databases";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
 import DocumentsProcess from "../../Components/DocumentsProcess";
@@ -29,6 +29,12 @@ const CustomPageLayout = () => {
   const [refDocToggle, setRefDocToggle] = useState(false);
   const [changeSessionState, setChangeSessionState] = useState(false);
 
+  const [toggleAiSuggest, setToggleAiSuggest] = useState(false);
+
+  const handleAiSuggest = () => {
+    setToggleAiSuggest(!toggleAiSuggest);
+  };
+
   const dispatch = useDispatch();
 
   const handleSessionClose = () => {
@@ -48,7 +54,6 @@ const CustomPageLayout = () => {
     setChangeSessionState(!changeSessionState);
   };
 
- 
   return (
     <div className="main-page-layout-container">
       <div className="layout-top-section d-flex">
@@ -129,11 +134,18 @@ const CustomPageLayout = () => {
         </div>
       </div>
       <div className="layout-bottom-section rounded-2">
-        <div className={`bottom-section-left rounded-2 ${expandDocumentDiv === true ? "bottom-section-left-expand" : ""}`} >
+        <div
+          className={`bottom-section-left rounded-2 ${
+            expandDocumentDiv === true ? "bottom-section-left-expand" : ""
+          }`}
+        >
           <DocumentsProcess />
         </div>
-        <div className="bottom-section-right rounded-2">
+        <div className="bottom-section-mid rounded-2">
           <DocumentIndex />
+        </div>
+        <div className="bottom-section-right rounded-2">
+          <CustomDatabases />
         </div>
       </div>
       <div
@@ -142,12 +154,21 @@ const CustomPageLayout = () => {
         }`}
       >
         <div className="ai-chat-top">
-          <div className="ai-chat-text d-flex gap-1">
-            <span className="aichatclose" onClick={handleChatClose}>
-              &lt;
-            </span>
-            <span>AI CHAT</span>
+          <div className="ai-chat-text d-flex align-align-items-center justify-content-between gap-1">
+            <div className="ai-chat-dropdown ">
+              {/* <div className="dropdown-title" onClick={handleAiSuggest}>
+                <span>
+                  Select a document/database/sessions you want chat with AI v
+                </span>
+                <div className="dropdown-options">  </div>
+              </div> */}
+            </div>
+
+            <div className="aiChatEject d-flex align-align-items-center">
+              <span>Eject Model</span>
+            </div>
           </div>
+
           <hr />
         </div>
         <div className="ai-chat-mid p-2 rounded-2">
