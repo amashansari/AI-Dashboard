@@ -383,6 +383,7 @@ span.ref-name {
   font-size: 12px;
 }
 
+<<<<<<< HEAD
 .select-ai-doc {
   display: flex;
   align-items: center;
@@ -447,6 +448,8 @@ span.ref-name {
   /* width: 100px; */
   text-align: center;
 }
+=======
+>>>>>>> 18532bee2710841050c8178cb6349a0079b9341b
 
 .ai-chat-mid {
   border: 2px solid var(--border-color-2);
@@ -621,16 +624,15 @@ span.ref-name {
   background-size: 20px 20px;
   background-position: 0px 0px;
   height: 100%;
-  /* width: 50%; */
+  width: 100%;
   transition: 0.5s all ease-in-out;
   transform: translateY(0);
+  z-index: 2000;
 }
 
 .bottom-section-left-expand {
   height: calc(100vh - 28px);
   width: calc(100vw - 90px);
-  position: absolute;
-  /* top: 0; */
   transform: translateY(-88%);
   z-index: 2000;
   transition: all 0.5s ease;
@@ -1595,7 +1597,6 @@ span.completed-action {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--text-color-1);
-  border: 2px solid #000;
 }
 
 .modal-head {

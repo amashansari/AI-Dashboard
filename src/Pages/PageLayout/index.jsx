@@ -19,6 +19,7 @@ import {
 import CustomChatRef from "../../Components/ChatAiRef";
 import CustomSessionsDetail from "../../Components/SessionDetail";
 
+
 const CustomPageLayout = () => {
   const sessionToggle = useSelector((state) => state.sessionShow);
   const aiChatToggle = useSelector((state) => state.aiChat);
@@ -154,19 +155,10 @@ const CustomPageLayout = () => {
         }`}
       >
         <div className="ai-chat-top">
-          <div className="ai-chat-text d-flex align-align-items-center justify-content-between gap-1">
-            <div className="ai-chat-dropdown ">
-              {/* <div className="dropdown-title" onClick={handleAiSuggest}>
-                <span>
-                  Select a document/database/sessions you want chat with AI v
-                </span>
-                <div className="dropdown-options">  </div>
-              </div> */}
-            </div>
-
-            <div className="aiChatEject d-flex align-align-items-center">
-              <span>Eject Model</span>
-            </div>
+          <div className="ai-chat-text d-flex gap-1">
+            <span className="aichatclose" onClick={handleChatClose}>
+              &lt; AI Chat
+            </span>
           </div>
 
           <hr />
